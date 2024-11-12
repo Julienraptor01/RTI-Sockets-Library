@@ -46,6 +46,10 @@ int main(int argc, char *argv[]) {
 			printf("Failed to send data\n");
 			return 1;
 		}
-		printf("Sent %zd bytes\n", sent);
+		printf("Sent %zd bytes:", sent);
+		for (ssize_t i = 0; i < sent; i++) {
+			printf(" %02x", data[i]);
+		}
+		printf("\n");
 	}
 }

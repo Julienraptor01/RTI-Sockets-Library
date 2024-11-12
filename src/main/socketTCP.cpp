@@ -1,7 +1,7 @@
 #include "socketTCP.h"
 
+#include <cstdio>
 #include <netinet/in.h>
-#include <stdio.h>
 #include <sys/socket.h>
 #include <unistd.h>
 
@@ -52,10 +52,10 @@ int createClientSocket(ipv4Address serverIP, unsigned short serverPort) {
 	return clientSocket;
 }
 
-ssize_t send(int socket, const uint8_t data[], size_t size) {
+ssize_t send(int socket, const uint8_t data[], ssize_t size) {
 	return write(socket, data, size);
 }
 
-ssize_t receive(int socket, uint8_t data[], size_t size) {
+ssize_t receive(int socket, uint8_t data[], ssize_t size) {
 	return read(socket, data, size);
 }

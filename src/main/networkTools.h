@@ -1,8 +1,7 @@
 #ifndef NETWORKTOOLS_H
 #define NETWORKTOOLS_H
 
-#include <stdbool.h>
-#include <stdint.h>
+#include <cstdint>
 
 /**
  * @brief A structure to represent an IPv4 address

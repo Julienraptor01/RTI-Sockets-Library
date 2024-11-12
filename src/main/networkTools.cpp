@@ -1,6 +1,6 @@
 #include "networkTools.h"
 
-#include <stdio.h>
+#include <cstdio>
 
 bool stringToIPv4Address(const char string[], ipv4Address *address) {
 	uint8_t a, b, c, d;

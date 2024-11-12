@@ -1,7 +1,6 @@
 #ifndef SOCKETTCP_H
 #define SOCKETTCP_H
 
-#include <stdint.h>
 #include <sys/types.h>
 
 #include "networkTools.h"
@@ -35,7 +34,7 @@ int createClientSocket(ipv4Address serverIP, unsigned short serverPort);
  * @param size The size of the data to send
  * @return The number of bytes sent
  */
-ssize_t send(int socket, const uint8_t data[], size_t size);
+ssize_t send(int socket, const uint8_t data[], ssize_t size);
 /**
  * @brief Receive data from a socket
  * @param socket The socket to receive data from
@@ -43,6 +42,6 @@ ssize_t send(int socket, const uint8_t data[], size_t size);
  * @param size The size of the buffer
  * @return The number of bytes received
  */
-ssize_t receive(int socket, uint8_t data[], size_t size);
+ssize_t receive(int socket, uint8_t data[], ssize_t size);
 
 #endif

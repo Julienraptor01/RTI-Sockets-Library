@@ -47,7 +47,7 @@ RM=rm -rf
 # silent log
 LOG=@printf
 
-.PHONY: all build setup clean full-clean
+.PHONY: all build run setup clean full-clean
 .SECONDARY: $(OBJECTS)
 
 all: setup build
@@ -64,6 +64,11 @@ build:
 	$(LOG) '\n\033[42mbuilding the main executable\033[49m\n'
 	make $(MAIN_BIN)/main
 	$(LOG) '\n\033[44mmake build finished\033[49m\n\n'
+
+run: build
+	$(LOG) '\n\033[42mrunning the main executable\033[49m\n'
+	$(MAIN_BIN)/main server & $(MAIN_BIN)/main client
+	$(LOG) '\n\033[44mmake run finished\033[49m\n\n'
 
 setup:
 	$(LOG) '\n\033[42msetup of the directories\033[49m\n'
